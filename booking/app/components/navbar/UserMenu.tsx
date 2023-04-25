@@ -9,6 +9,8 @@ import useRegisterModal from "../../hooks/useRegisterModal";
 
 const UserMenu = () => {
 
+
+  const registerModal = useRegisterModal();
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleOpen = useCallback(() => {
@@ -111,7 +113,8 @@ const UserMenu = () => {
                      
                     />
                     <MenuItem 
-                      label="Sign up" 
+                  label="Sign up" 
+                  onClick={registerModal.onOpen}
                       
                         />
                         </>
