@@ -6,8 +6,11 @@ import { signOut } from "next-auth/react";
 import { AiOutlineMenu } from "react-icons/ai";
 import Avatar from "../Avatar"
 import MenuItem from "./MenuItem";
+
 import useRegisterModal from "../../hooks/useRegisterModal";
 import useLoginModal from "../../hooks/useLoginModal";
+import useRentModal from "../../hooks/useRentModal";
+
 
 
 interface UserMenuProps {
@@ -21,17 +24,26 @@ const UserMenu: React.FC<UserMenuProps> = ({
 
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
+  const rentModal = useRentModal();
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleOpen = useCallback(() => {
       setIsOpen((value) => !value);
     }, []);
+
+    const onRent = useCallback(() => {
+      if (!currentUser) {
+        return loginModal.onOpen();
+      }
+  
+      rentModal.onOpen();
+    }, [loginModal, rentModal, currentUser]);
     
     return ( 
       <div className="relative">
         <div className="flex flex-row items-center gap-3">
           <div 
-            // onClick={onRent}
+            onClick={onRent}
             className="
               hidden
               md:block
@@ -45,7 +57,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
               cursor-pointer
             "
           >
-            Airbnb your home
+            Book A Service
           </div>
           <div 
           onClick={toggleOpen}
@@ -106,8 +118,8 @@ const UserMenu: React.FC<UserMenuProps> = ({
                     onClick={() => router.push('/properties')}
                   />
                   <MenuItem 
-                    label="Airbnb your home" 
-                    // onClick={rentModal.onOpen}
+                    label="Book A Service" 
+                    onClick={rentModal.onOpen}
                   />
                   <hr />
                   <MenuItem 
