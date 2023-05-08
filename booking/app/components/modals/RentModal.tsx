@@ -61,7 +61,7 @@ const RentModal = () => {
     });
     
 
-    //   const location = watch('location');
+     const location = watch('location');
     const category = watch('category');
     //       const guestCount = watch('guestCount');
     //     const roomCount = watch('roomCount');
@@ -69,9 +69,10 @@ const RentModal = () => {
     //   const imageSrc = watch('imageSrc');
 
     
-    // const Map = useMemo(() => dynamic(() => import('../Map'), { 
-    //     ssr: false 
-    //   }), [location]);
+    const Map = useMemo(() => dynamic(() => import('../Map'), { 
+        ssr: false 
+    }), [location]);
+    
     const setCustomValue = (id: string, value: any) => {
         setValue(id, value, {
             shouldDirty: true,
@@ -168,10 +169,10 @@ const RentModal = () => {
                   subtitle="Help clients find you!"
                 />
                 <CountrySelect 
-                  value={location} 
+                value={location} 
                   onChange={(value) => setCustomValue('location', value)} 
                 />
-                {/* <Map center={location?.latlng} /> */}
+                <Map center={location?.latlng} />
               </div>
             );
           }
