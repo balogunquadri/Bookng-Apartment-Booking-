@@ -20,6 +20,7 @@ import Heading from '../Heading';
 import { categories } from '../navbar/Categories';  
 import CategoryInput from '../inputs/CategoryInput';
 import CountrySelect from "../inputs/CountrySelect";
+import ImageUpload from '../inputs/ImageUpload';
 
 enum STEPS {
     CATEGORY = 0,
