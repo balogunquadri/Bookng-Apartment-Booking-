@@ -14,7 +14,7 @@ import { useMemo, useState } from "react";
 import useRentModal from '../../hooks/useRentModal';
 
 import Modal from "./Modal";
-// import Input from '../inputs/Input';
+import Input from '../inputs/Input';
 import Counter from "../inputs/Counter";
 import Heading from '../Heading';
 import { categories } from '../navbar/Categories';  
@@ -225,14 +225,64 @@ const RentModal = () => {
       </div>
     )
   }
+
+  if (step === STEPS.DESCRIPTION) {
+    bodyContent = (
+      <div className="flex flex-col gap-8">
+        <Heading
+          title="How would you describe your place?"
+          subtitle="Short and sweet works best!"
+        />
+        <Input
+          id="title"
+          label="Title"
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        />
+        <hr />
+        <Input
+          id="description"
+          label="Description"
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        />
+      </div>
+    )
+  }
+
+  if (step === STEPS.PRICE) {
+    bodyContent = (
+      <div className="flex flex-col gap-8">
+        <Heading
+          title="Now, set your price"
+          subtitle="How much do you charge per night?"
+        />
+        <Input
+          id="price"
+          label="Price"
+          formatPrice 
+          type="number" 
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        />
+      </div>
+    )
+  }
+
         return (
             <Modal
                 disabled={isLoading}
                 isOpen={rentModal.isOpen}
                 title="Book A Service!"
                 actionLabel={actionLabel}
-                // onSubmit={handleSubmit(onSubmit)}
-                onSubmit={onNext}
+                 onSubmit={handleSubmit(onSubmit)}
+                
                 secondaryActionLabel={secondaryActionLabel}
                 secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
                 onClose={rentModal.onClose}
