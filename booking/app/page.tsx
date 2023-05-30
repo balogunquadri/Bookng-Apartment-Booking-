@@ -5,7 +5,7 @@ import getCurrentUser from "./actions/getCurrentUser";
 
 import getListings,  { 
   IListingsParams
-}from "./actions/getListing"
+}from "./actions/getListings"
 
 import EmptyState from "./components/EmptyState";
 import ListingCard from "./components/listings/ListingCard";
@@ -36,7 +36,7 @@ const Home = async ({ searchParams }: HomeProps) => {
             2xl:grid-cols-6
             gap-8
           ">
-           {listings.map((listing: any) => (
+           {listings.map((listing ) => (
             <ListingCard
               currentUser={currentUser}
               key={listing.id}
@@ -48,3 +48,5 @@ const Home = async ({ searchParams }: HomeProps) => {
     </ClientOnly>
   )
 }
+
+export default Home;
