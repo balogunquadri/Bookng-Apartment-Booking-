@@ -39,6 +39,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
   const { getByValue } = useCountries();
 
   const location = getByValue(data.locationValue);
+  
 
   const handleCancel = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -73,9 +74,9 @@ const ListingCard: React.FC<ListingCardProps> = ({
   return (
     <div 
       onClick={() => router.push(`/listings/${data.id}`)} 
-      className="col-span-1 cursor-pointer group"
+      className="col-span-1 cursor-pointer group pt-10"
     >
-      <div className="flex flex-col gap-2 w-full">
+      <div className="flex flex-col gap-2 mt-10 pt-20 w-full">
         <div 
           className="
             aspect-square 
@@ -95,6 +96,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
               transition
             "
             src={data.imageSrc}
+            
             alt="Listing"
           />
           <div className="
