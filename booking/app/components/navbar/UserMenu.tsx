@@ -57,7 +57,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
               cursor-pointer
             "
           >
-            Book A Service
+            Post Your Service
           </div>
           <div 
           onClick={toggleOpen}
@@ -118,7 +118,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                     onClick={() => router.push('/properties')}
                   />
                   <MenuItem 
-                    label="Book A Service" 
+                    label="Post Your Service" 
                     onClick={rentModal.onOpen}
                   />
                   <hr />

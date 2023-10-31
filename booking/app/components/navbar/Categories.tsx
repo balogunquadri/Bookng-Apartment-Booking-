@@ -23,74 +23,74 @@ import Container from '../Container';
 
 export const categories = [
   {
-    label: 'Beach',
+    label: 'Plumbing',
     icon: TbBeach,
-    description: 'This property is close to the beach!',
+    description: 'Water Pipe, Borehole, Sink e.t.c',
   },
   {
-    label: 'Windmills',
+    label: 'Electrician',
     icon: GiWindmill,
-    description: 'This property is has windmills!',
+    description: 'Wiring, Socket, Bulb',
   },
   {
-    label: 'Modern',
+    label: 'Haulage',
     icon: MdOutlineVilla,
-    description: 'This property is modern!'
+    description: 'Delivery, Move Good, Packing'
   },
   {
-    label: 'Countryside',
+    label: 'Writer',
     icon: TbMountain,
-    description: 'This property is in the countryside!'
+    description: 'Copy Writer, Artice Writer, Proofreading e.t.c'
   },
   {
-    label: 'Pools',
+    label: 'I T and Software',
     icon: TbPool,
-    description: 'This is property has a beautiful pool!'
+    description: 'Web Design, UI/UX, AI/ML'
   },
   {
-    label: 'Islands',
+    label: 'Graphics',
     icon: GiIsland,
-    description: 'This property is on an island!'
+    description: 'Pictures, Video Editing, Photo Shoot e.t.c'
   },
   {
-    label: 'Lake',
+    label: 'Party',
     icon: GiBoatFishing,
-    description: 'This property is near a lake!'
+    description: 'M C, Event Planner, D J e.t.c'
   },
   {
-    label: 'Skiing',
+    label: 'Car and Bikes',
     icon: FaSkiing,
-    description: 'This property has skiing activies!'
+    description: 'Wheel balancing, Servicing, Alignment e.t.c'
   },
   {
-    label: 'Castles',
+    label: 'Weldering',
     icon: GiCastle,
-    description: 'This property is an ancient castle!'
+    description: 'Iron Bender, Fabrication, Steel e.t.c'
   },
   {
-    label: 'Caves',
+    label: 'Personal Assistance',
     icon: GiCaveEntrance,
-    description: 'This property is in a spooky cave!'
+    description: 'Virtual Assistance, Body Guard, Travel Buddy e.t.c'
   },
   {
-    label: 'Camping',
+    label: 'House Decoration',
     icon: GiForestCamp,
-    description: 'This property offers camping activities!'
+    description: 'Painter, P.O.P, Interior Design e.t.c!'
   },
   {
-    label: 'Arctic',
+    label: 'Equipment Service',
     icon: BsSnow,
-    description: 'This property is in arctic environment!'
+    description: 'Generator, Heavy Machine, Bugger e.t.c'
   },
   {
-    label: 'Desert',
+    label: 'Tutor',
     icon: GiCactus,
-    description: 'This property is in the desert!'
+    description: 'Education, Lesson teacher and Consultancy e.t.c'
   },
   {
-    label: 'Barns',
+    label: 'Hook up',
     icon: GiBarn,
-    description: 'This property is in a barn!'
+    description: 'FWB, Dating, Partner e.t.c'
   }
 ]
 
