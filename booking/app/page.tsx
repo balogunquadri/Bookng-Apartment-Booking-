@@ -1,14 +1,16 @@
+import Container from "@/app/components/Container";
+import ListingCard from "@/app/components/listings/ListingCard";
+import EmptyState from "@/app/components/EmptyState";
 
-import ClientOnly from "./components/ClientOnly";
-import Container from "./components/Container";
-import getCurrentUser from "./actions/getCurrentUser";
-
-import getListings,  { 
+import getListings, { 
   IListingsParams
-}from "./actions/getListings"
+} from "@/app/actions/getListings";
+import getCurrentUser from "@/app/actions/getCurrentUser";
+import ClientOnly from "./components/ClientOnly";
 
-import EmptyState from "./components/EmptyState";
-import ListingCard from "./components/listings/ListingCard";
+interface HomeProps {
+  searchParams: IListingsParams
+};
 
 const Home = async ({ searchParams }: HomeProps) => {
   const listings = await getListings(searchParams);
@@ -17,16 +19,18 @@ const Home = async ({ searchParams }: HomeProps) => {
   if (listings.length === 0) {
     return (
       <ClientOnly>
-    <EmptyState showReset />
-    </ClientOnly>
-    )
+        <EmptyState showReset />
+      </ClientOnly>
+    );
   }
+
   return (
     <ClientOnly>
       <Container>
-      <div 
+        <div 
           className="
-            pt-24
+            pt-40 
+            mt-25
             grid 
             grid-cols-1 
             sm:grid-cols-2 
@@ -35,15 +39,16 @@ const Home = async ({ searchParams }: HomeProps) => {
             xl:grid-cols-5
             2xl:grid-cols-6
             gap-8
-          ">
-           {listings.map((listing ) => (
+          "
+        >
+          {listings.map((listing: any) => (
             <ListingCard
               currentUser={currentUser}
               key={listing.id}
               data={listing}
             />
           ))}
-          </div>
+        </div>
       </Container>
     </ClientOnly>
   )

@@ -10,7 +10,7 @@ import MenuItem from "./MenuItem";
 import useRegisterModal from "../../hooks/useRegisterModal";
 import useLoginModal from "../../hooks/useLoginModal";
 import useRentModal from "../../hooks/useRentModal";
-
+import { SafeUser } from "@/app/types";
 
 
 interface UserMenuProps {
@@ -102,20 +102,20 @@ const UserMenu: React.FC<UserMenuProps> = ({
               {currentUser ? (
                 <>
                   <MenuItem 
-                    label="My trips" 
-                    onClick={() => router.push('/trips')}
+                    label="My Orders" 
+                    onClick={() => router.push('/orders')}
                   />
                   <MenuItem 
-                    label="My favorites" 
+                    label="My Bookmarks" 
                     onClick={() => router.push('/favorites')}
                   />
                   <MenuItem 
-                    label="My reservations" 
-                    onClick={() => router.push('/reservations')}
+                    label="My Offers" 
+                    onClick={() => router.push('/offers')}
                   />
                   <MenuItem 
-                    label="My properties" 
-                    onClick={() => router.push('/properties')}
+                    label="My Services" 
+                    onClick={() => router.push('/services')}
                   />
                   <MenuItem 
                     label="Post Your Service" 

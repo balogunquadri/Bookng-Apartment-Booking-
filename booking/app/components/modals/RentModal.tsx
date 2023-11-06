@@ -135,7 +135,7 @@ const RentModal = () => {
         let bodyContent = (
             <div className="flex flex-col gap-8">
                 <Heading
-                    title="Which of these best describes your place?"
+                    title="Which of these best describes your service?"
                     subtitle="Pick a category"
                 />
                 <div
@@ -167,7 +167,7 @@ const RentModal = () => {
             bodyContent = (
               <div className="flex flex-col gap-8">
                 <Heading
-                  title="Where is your rent located?"
+                  title="Where is your service located?"
                   subtitle="Help clients find you!"
                 />
                 <CountrySelect 
@@ -184,28 +184,28 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Share some basics about your place"
-          subtitle="What amenitis do you have?"
+          title="Share some basics about your service"
+          subtitle="How would you rate yourself!"
         />
         <Counter 
           onChange={(value) => setCustomValue('guestCount', value)}
           value={guestCount}
-          title="Guests" 
-          subtitle="How many guests do you allow?"
+          title="Experience" 
+          subtitle="How many years of experience do you have?"
         />
         <hr />
         <Counter 
           onChange={(value) => setCustomValue('roomCount', value)}
           value={roomCount}
-          title="Rooms" 
-          subtitle="How many rooms do you have?"
+          title="Staff" 
+          subtitle="How many team members do you have?"
         />
         <hr />
         <Counter 
           onChange={(value) => setCustomValue('bathroomCount', value)}
           value={bathroomCount}
-          title="Bathrooms" 
-          subtitle="How many bathrooms do you have?"
+          title="Project" 
+          subtitle="How many Projects have you completed"
         />
       </div>
     )
@@ -215,8 +215,8 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Add a photo of your place"
-          subtitle="Show guests what your place looks like!"
+          title="Add a photo of your work"
+          subtitle="Show customers what you've done!"
         />
         <ImageUpload
           onChange={(value) => setCustomValue('imageSrc', value)}
@@ -230,8 +230,8 @@ const RentModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="How would you describe your place?"
-          subtitle="Short and sweet works best!"
+          title="How would you describe your service?"
+          subtitle="e.g I Can build a bungalow for you!"
         />
         <Input
           id="title"
@@ -259,7 +259,7 @@ const RentModal = () => {
       <div className="flex flex-col gap-8">
         <Heading
           title="Now, set your price"
-          subtitle="How much do you charge per night?"
+          subtitle="How much do you charge?"
         />
         <Input
           id="price"

@@ -1,21 +1,30 @@
+
 import EmptyState from "@/app/components/EmptyState";
 import ClientOnly from "@/app/components/ClientOnly";
 
 import getCurrentUser from "@/app/actions/getCurrentUser";
-import getFavoriteListings from "@/app/actions/getFavoriteListings";
+import getListings from "@/app/actions/getListings";
 
-import FavoritesClient from "./FavoritesClient";
+import ServicesClient from "./servicesClient";
 
-const ListingPage = async () => {
-  const listings = await getFavoriteListings();
+const PropertiesPage = async () => {
   const currentUser = await getCurrentUser();
+
+  if (!currentUser) {
+    return <EmptyState
+      title="Unauthorized"
+      subtitle="Please login"
+    />
+  }
+
+  const listings = await getListings({ userId: currentUser.id });
 
   if (listings.length === 0) {
     return (
       <ClientOnly>
         <EmptyState
-          title="No Bookmark found"
-          subtitle="Looks like you haven't bookmarked Anything."
+          title="No Service found"
+          subtitle="Looks like you have no service listed."
         />
       </ClientOnly>
     );
@@ -23,7 +32,7 @@ const ListingPage = async () => {
 
   return (
     <ClientOnly>
-      <FavoritesClient
+      <ServicesClient
         listings={listings}
         currentUser={currentUser}
       />
@@ -31,4 +40,4 @@ const ListingPage = async () => {
   );
 }
  
-export default ListingPage;
+export default PropertiesPage;
